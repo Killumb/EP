@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encoder/Decoder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    /* Define your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    p {
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    .encode-decode-container {
+      margin-top: 40px;
+    }
+
+    .encode-decode-container h2 {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Encoder/Decoder</h1>
+
+    <div class="encode-decode-container">
+      <h2>Caesar Cipher Encode</h2>
+      <div class="form-group">
+        <label for="plain-text">Enter the plain text:</label>
+        <input type="text" class="form-control" id="plain-text" />
+      </div>
+      <button class="btn btn-primary" onclick="encode()">Encode</button>
+      <h3>Encoded Text:</h3>
+      <p id="encoded-text"></p>
+
+      <h2>Caesar Cipher Decode</h2>
+      <div class="form-group">
+        <label for="cipher-text">Enter the cipher text:</label>
+        <input type="text" class="form-control" id="cipher-text" />
+      </div>
+      <button class="btn btn-primary" onclick="decode()">Decode</button>
+      <h3>Decoded Text:</h3>
+      <p id="decoded-text"></p>
+    </div>
+
+    <div class="encode-decode-container">
+      <h2>Base64 Encode</h2>
+      <div class="form-group">
+        <label for="base64-encode-text">Enter the text to encode:</label>
+        <input type="text" class="form-control" id="base64-encode-text" />
+      </div>
+      <button class="btn btn-primary" onclick="base64Encode()">Encode</button>
+      <h3>Encoded Text:</h3>
+      <p id="base64-encoded-text"></p>
+
+      <h2>Base64 Decode</h2>
+      <div class="form-group">
+        <label for="base64-decode-text">Enter the text to decode:</label>
+        <input type="text" class="form-control" id="base64-decode-text" />
+      </div>
+      <button class="btn btn-primary" onclick="base64Decode()">Decode</button>
+      <h3>Decoded Text:</h3>
+      <p id="base64-decoded-text"></p>
+    </div>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    // Your JavaScript code here
+    function encode() {
+      var plainText = document.getElementById("plain-text").value;
+      var encodedText = "";
+
+      // Caesar Cipher Encoding Logic
+      // ...
+
+      document.getElementById("encoded-text").innerText = encodedText;
+    }
+
+    function decode() {
+      var cipherText = document.getElementById("cipher-text").value;
+      var decodedText = "";
+
+      // Caesar Cipher Decoding Logic
+      // ...
+
+      document.getElementById("decoded-text").innerText = decodedText;
+    }
+
+    function base64Encode() {
+      var plainText = document.getElementById("base64-encode-text").value;
+      var encodedText = btoa(plainText);
+      document.getElementById("base64-encoded-text").innerText = encodedText;
+    }
+
+    function base64Decode() {
+      var encodedText = document.getElementById("base64-decode-text").value;
+      var decodedText = atob(encodedText);
+      document.getElementById("base64-decoded-text").innerText = decodedText;
+    }
+  </script>
+</body>
+
+</html>
